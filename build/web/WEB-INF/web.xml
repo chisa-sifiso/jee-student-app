@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.AddStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchStuServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.SearchStuServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchAllStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.SearchAllStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.DeleteStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NumberOfStudentsServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.NumberOfStudentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Summaryservlet</servlet-name>
+        <servlet-class>za.ac.tut.web.Summaryservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <url-pattern>/AddStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchStuServlet</servlet-name>
+        <url-pattern>/SearchStuServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAllStudentServlet</servlet-name>
+        <url-pattern>/SearchAllStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteStudentServlet</servlet-name>
+        <url-pattern>/DeleteStudentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NumberOfStudentsServlet</servlet-name>
+        <url-pattern>/NumberOfStudentsServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Summaryservlet</servlet-name>
+        <url-pattern>/Summaryservlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <security-constraint>
+        <display-name>principalConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>principal </web-resource-name>
+            <description>has five pages</description>
+            <url-pattern>/summary.html</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>the principal</description>
+            <role-name>principal</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>teacher</display-name>
+        <web-resource-collection>
+            <web-resource-name>teacher resource</web-resource-name>
+            <description>taeacher reasours</description>
+            <url-pattern>/summary.html</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>authented teacher</description>
+            <role-name>teacher</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/login_error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/access_denied.html</location>
+    </error-page>
+    <security-role>
+        <description>can access all 5 options</description>
+        <role-name>teacher</role-name>
+    </security-role>
+    <security-role>
+        <description>can access one option</description>
+        <role-name>principal</role-name>
+    </security-role>
+</web-app>

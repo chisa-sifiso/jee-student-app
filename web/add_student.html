@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: #ffff99">
+        <center>
+            <form action="AddStudentServlet.do" method="POST" enctype="multipart/form-data">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Photo:</td>
+                            <td><input type="file" name="photo" accept="image/*" /></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="name" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Surname</td>
+                            <td><input type="text" name="surname" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td><input type="text" name="age" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>
+                                <select name="gender">
+                                    <option> </option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>student Number</td>
+                            <td><input type="text" name="id" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Subject</td>
+                            <td>
+                                <div id="subDiv">
+                                <input type="text" name="Subjects" value="" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" onclick="addSubject()" value="Add Another Subject" /></td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td><input type="text" name="date" value="" placeholder="yyyy-mm-dd"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Add Student" /></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+                
+            </form>
+            <script>
+                function addSubject(){
+                    var subjectDiv = document.getElementById("subDiv");
+                        subjectDiv.appendChild(document.createElement("br"));
+                        subjectDiv.appendChild(document.createElement("br"));
+                    var newElement = document.createElement("input");
+                        newElement.type = "text";
+                        newElement.name="Subjects";
+                        newElement.placeholder ="New Subject";
+                    subjectDiv.appendChild(newElement);
+                    
+                }
+                
+            </script>    
+        </center>   
+    </body>
+</html>
