@@ -21,7 +21,7 @@ TomEE/WildFly/Glassfish: Application server.
 Usage
 Run the Application:
 
-Once deployed, access the web app by navigating to http://localhost:8080/your-app-name.
+Once deployed, access the web app by navigating to http://localhost:8080/jee-student-app.
 The JSP pages will dynamically display content retrieved from the database.
 JPQL Queries:
 
