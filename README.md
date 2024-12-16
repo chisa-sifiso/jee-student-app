@@ -32,3 +32,4 @@ JPA Entity Mapping: Simplified entity mapping using JPA annotations.
 EJB Business Logic: Modular business logic implemented using EJBs.
 Dynamic Content: Data retrieval and display through Servlets and JSP pages.
 JPQL Queries: Use of SQL-like syntax for querying database entities.
+<h2>developed by SV</h2>
